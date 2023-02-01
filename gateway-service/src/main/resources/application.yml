@@ -29,6 +29,14 @@ spring:
           filters:
             - RewritePath=/cydeo/dev/task/(?<segment>.*),/$\{segment}
 
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: http://host.docker.internal:9411
+
+
+
 server:
   port: 8762
 
@@ -60,3 +68,5 @@ info:
     version: '@project.version@'
     spring-cloud-version: '@spring-cloud.version@'
     spring-boot-version: '@project.parent.version@'
+
+
