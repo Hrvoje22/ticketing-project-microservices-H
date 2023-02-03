@@ -2,12 +2,16 @@ spring:
   application:
     name: config-server
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
+        git:
+          uri: https://github.com/Hrvoje22/ticketing-project-microservices-config
+          default-label: main
+          username: Hrvoje22
+          password: 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
+      fail-fast: true
 
 server:
   port: 8888
